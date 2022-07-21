@@ -1,0 +1,112 @@
+So you want to start programming with react, well son follow my guide and you shall.
+
+Introduction:
+    Installing React for Typescript:
+    // if you don't use yarn yet, start now, install it with npm install --global yarn
+    // for starters let's install the reac app for typescript using yarn create react-app app --template typescript
+    // second enter the created app folder using cd app in the terminal
+    // add the types needed for react to understand the typescript with yarn add typescript @types/node @types/react @types/react-dom @types/jest
+    // add the types needed for styled-components with yarn add @types/styled-components
+    // Congrats now you are ready to start the app for the first time using yarn start
+
+    Preparing the Project:
+    // add "baseUrl": "./src", to the tsconfig.json file on line 3 right inside the compilerOptions.
+        //this defines the base url as the ./src in the imports for every file it will assume the starting folder as the ./src
+    // install the extension "ES7+ React/Redux/React-Native snippets"
+    // Install the styled-components library with yarn add styled-components
+    // create the assets and types folders inside the src folder
+    // put your assets inside the assets folder(images and icons)
+    // create a folder called styles inside the assets folder
+    // create a colors.ts file inside the styles folder
+        // In here you will define the basic colors for you webpage
+    // create a constants.ts file inside the styles folder
+        // In this file you will define the basic fonts, fontfamily, fontsize and etc for the page(hedings, paragraphs and such)
+    // create a mixins.ts file inside the styles folder
+        // In this file you will combine the configurations stored in the other files that you created
+    // create a themes.ts file inside the styles folder
+        // In this file you will concentrate your CSS configurations
+    // create a styled-components.d.ts in the types folder
+        // In this file you will import from the theme.ts and export them as defaultTheme for the webpage
+    
+    Configurating the ThemeProvider and react-router-dom:
+    // Install the "vscode-styled-components" extension
+    // Install the react-router-dom with yarn add react-router-dom
+        // This is a library for routes in react that gives the routes the condition of "not reloading a page" to be shown on screen, this way the project stays a SPA(Single Page Application) while using the routes by react-router-dom
+    // In the folder src fix the App.tsx to match all the preparation you made by importing the ThemeProvider from Styled-Components and the theme created before. Remember to insert the ThemeProvider passing the theme as a parameter
+    // Create a routes.ts file in the types folder
+        // This file is used to store the alias that makes reference to our application
+    // Create a router.tsx file in the src folder
+        //This file is responsable for rendering the routes of the application in accordance with the RoutePath configured
+    // In the App.tsx import the Router with the BrowserRouter inside the ThemeProvider
+    
+    Inserting the @tanstack/react-query and imporving Arquitecture
+    // Install the @tanstack/react-query with yarn add @tanstack/react-query
+        // with this library we can get help with the fetch, cache storage, syncronization and updating of the server state
+
+    Folder structures: Improving the Project Arquitecture
+    // To improve the architecture of our application, we will create some folders inside src, namely:
+        components: responsible for storing all application components
+        mocks: responsible for storing data in memory while we don't consume the API
+        pages: responsible for saving the main pages of the application
+            And inside the pages folder, let's create the following folders:
+                Home: responsible for the application's home screen
+                Login: responsible for the application login screen
+                Settings: responsible for the application settings screen
+        services: will be responsible for keeping the communication file with the API
+        data: responsible for storing some important application data
+        helpers: responsible for keeping some helper classes necessary for our application
+    // Add the temporary mocks files
+    // Create the index.tsx in the Home folder
+
+Components Home and Menu + Luxon:
+    Home:
+    // Notice that while you have the styled-components library installed you can work with css in a .js or .ts file.
+    // To start create the style.ts file in the Home folder and import the styled, {css} from styled-componets.
+    // You will now start creating the css style in the style.ts file for the HOME and call the to use in the tags accordingly
+
+    Menu:
+    // Create the Menu folder inside the components folder
+    // Create the index.jsx and the style.ts file in the folder
+    // Create the types.ts file as well and use it to import the routepath like so:
+        
+        import { RoutePath } from "types/routes";
+
+        export interface NavItem {
+        icon: JSX.Element;
+        path: RoutePath;
+        }
+
+    // Follow the same logic as the Home but for the menu alone, by the end it's normal to have a few errors in some of the tags, but remember you are still configurating, it's not ready yet.
+
+    Implementing the Menu component:
+    // Create the navigation.tsx in the data folder and connect it like so:
+        import { NavItem } from "components/Menu/types"; // from the Menu
+        import { ReactComponent as Home } from "assets/icons/home.svg"; // just an image
+        import { ReactComponent as Settings } from "assets/icons/settings.svg"; // just an image
+        import { RoutePath } from "types/routes"; // from the Routes
+
+        export const navigationItems: NavItem[] = [
+            {
+                icon: <Home />,
+                path: RoutePath.HOME,
+            },
+            {
+                icon: <Settings />,
+                path: RoutePath.SETTINGS,
+            },
+        ];
+    // In the Menu start adding the properties that it needs, starting by creating the interface of MenuProps that will demand it to receive an active and navItem like so:
+        interface MenuProps {
+        active: RoutePath;
+        navItems: NavItem[];
+        }
+    // With that the Menu will now need to receive these props like this: const Menu = ({ active, navItems }: MenuProps)
+    // Remember to also redefine the connections made in the Home
+    // Install the luxo library to better work using time in the Home, install it with yarn add luxon and the types with yarn add -D @types/luxon
+    // Import it into the Home with import { DateTime } from "luxon";
+    // Define the DateTime inside the const Home like so:
+        const dateDescription = DateTime.now().toLocaleString({
+            ...DateTime.DATE_SHORT,
+            weekday: "long",
+        });
+    // Now whenever you want to call use the date just call the dateDescription as a value
