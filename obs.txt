@@ -110,3 +110,45 @@ Components Home and Menu + Luxon:
             weekday: "long",
         });
     // Now whenever you want to call use the date just call the dateDescription as a value
+
+
+Login and Products:
+    Constructing the Login:
+    // In the App.css in the src folder, clear it and include the import from the predefined css display
+    // Create the index.tsx and style.ts in the login folder
+    // Picture how you want the login page to be and input it's pictured styles in the style.ts
+    // Create the structure in the index.tsx
+    // Include the login route in the router.tsx file in the src folder
+
+    BoxLogin:
+    // In the components folder create the BoxLogin folder and it's respective index.tsx and style.ts
+    // Picture how you want this page and style it accordingly
+    // Create the structure in the index.tsx
+    // Import it into the login index.tsx where you desire it to be
+
+    ProductItemList:
+    // In the components folder create the ProductItemList folder and it's respective index.tsx and style.ts
+    // Picture how you want this page and style it accordingly
+    // Create the structure in the index.tsx
+    // This is not imported so remember to import it to where you will render it, in this case the Homepage, so it's imported to he index.tsx in the Home folder in the pages folder
+    // Notice that with this being a list, you will need to include the props for this to call each product as a child
+    // create in the index of this folder an interface that defines the children type as a React.Node(children: React.ReactNode;) and call the children as props in the method and the location that it must be called the item whithin the list.
+
+    ProductItem:
+    // In the components folder create the ProductItem folder and it's respective index.tsx and style.ts
+    // Picture how you want this page and style it accordingly
+    // Create the structure in the index.tsx
+    // This is not imported so remember to import it to where you will render it, in this case the index.tsx in the Home folder in the pages folder
+
+    OrderDetails:
+    // In the components folder create the OrderDetails folder and it's respective index.tsx and style.ts
+    // Picture how you want this page and style it accordingly
+    // Create the structure in the index.tsx
+    // This is not imported so remember to import it to where you will render it, in this case the index.tsx in the Home folder in the pages folder
+
+    ButtonToggle:
+    // In the components folder create the ButtonToggle folder and it's respective index.tsx and style.ts
+    // Picture how you want this page and style it accordingly
+    // Create the structure in the index.tsx
+    // Remember that this one requeris a bit more of work with it's structure since it has the "type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>;" and the props interface , it's a substructure of OrderDetails
+    // Since this is a subcomponent, remember to import it into it and include it properly into it's index.

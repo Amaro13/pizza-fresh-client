@@ -4,6 +4,9 @@ import Menu from "components/Menu"; //importing from the menu
 import { RoutePath } from "types/routes";
 import { navigationItems } from "data/navigation";
 import { DateTime } from "luxon";
+import ProductItemList from "components/ProductItemList";
+import ProductItem from "components/ProductItem";
+import OrderDetails from "components/OrderDetails";
 
 const Home = () => {
   const dateDescription = DateTime.now().toLocaleString({
@@ -11,36 +14,40 @@ const Home = () => {
     weekday: "long",
   });
 
-	return (
-		<S.Home>
-			<Menu active={RoutePath.HOME} navItems={navigationItems} />
-			<S.HomeContent>
-				<header>
-					<S.HomeHeaderDetails>
-						<div>
-							<S.HomeHeaderDetailsLogo>Pizza Fresh</S.HomeHeaderDetailsLogo>
-							<S.HomeHeaderDetailsDate>{dateDescription}</S.HomeHeaderDetailsDate>
-						</div>
-						<S.HomeHeaderDetailsSearch>
-							<Search />
-							<input type="text" placeholder="Procure pelo sabor" />
-						</S.HomeHeaderDetailsSearch>
-					</S.HomeHeaderDetails>
-				</header>
-				<div>
-					<S.HomeProductTitle>
-						<b>Pizzas</b>
-					</S.HomeProductTitle>
-					<S.HomeProductList>
-						<p>Lista de produtos aqui</p>
-					</S.HomeProductList>
-				</div>
-			</S.HomeContent>
-			<aside>
-				<p>Detalhes dos pedidos aqui</p>
-			</aside>
-		</S.Home>
-	);
+  return (
+    <S.Home>
+      <Menu active={RoutePath.HOME} navItems={navigationItems} />
+      <S.HomeContent>
+        <header>
+          <S.HomeHeaderDetails>
+            <div>
+              <S.HomeHeaderDetailsLogo>Pizza Fresh</S.HomeHeaderDetailsLogo>
+              <S.HomeHeaderDetailsDate>
+                {dateDescription}
+              </S.HomeHeaderDetailsDate>
+            </div>
+            <S.HomeHeaderDetailsSearch>
+              <Search />
+              <input type="text" placeholder="Procure pelo sabor" />
+            </S.HomeHeaderDetailsSearch>
+          </S.HomeHeaderDetails>
+        </header>
+        <div>
+          <S.HomeProductTitle>
+            <b>Pizzas</b>
+          </S.HomeProductTitle>
+          <S.HomeProductList>
+            <ProductItemList>
+              <ProductItem />
+            </ProductItemList>
+          </S.HomeProductList>
+        </div>
+      </S.HomeContent>
+      <aside>
+        <OrderDetails />
+      </aside>
+    </S.Home>
+  );
 };
 
 export default Home;
