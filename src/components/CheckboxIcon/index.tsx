@@ -17,7 +17,7 @@ const CheckboxIcon = ({icon, value, active = false, ...props}: CheckboxIconProps
             {icon && <div>{icon}</div>}
             <div>{value}</div>
         </S.CheckboxIcon>
-    );
+    ); // Toggle is not happening, it just stays on the CreditCard, it won't change to the money option
 }
 
 export default CheckboxIcon;

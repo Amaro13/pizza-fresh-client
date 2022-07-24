@@ -7,13 +7,13 @@ const OrderItem = () => {
 			<S.OrderItemLeft>
 				<S.OrderItemLeftTop>
 					<S.OrderItemProduct>
-						<S.OrderItemProductImage src="" alt="Pizza de..." />
+						<S.OrderItemProductImage src="" alt="Pizza de ..." />
 						<S.OrderItemProductDetails>
 							<S.OrderItemProductDetailsName>
-								Nome do Produto
+								Nome da Pizza
 							</S.OrderItemProductDetailsName>
 							<S.OrderItemProductDetailsPrice>
-								Preço do Produto
+								Preço da Pizza
 							</S.OrderItemProductDetailsPrice>
 						</S.OrderItemProductDetails>
 					</S.OrderItemProduct>
@@ -25,7 +25,7 @@ const OrderItem = () => {
 				/>
 			</S.OrderItemLeft>
 			<S.OrderItemRight>
-				<S.OrderItemRightTotalPrice>R$ 150.00</S.OrderItemRightTotalPrice>
+				<S.OrderItemRightTotalPrice>R$ 0.00</S.OrderItemRightTotalPrice>
 				<S.OrderItemRightTrash>
 					<Trash />
 				</S.OrderItemRightTrash>

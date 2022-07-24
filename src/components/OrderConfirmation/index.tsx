@@ -14,7 +14,7 @@ const OrderConfirmation = () => {
                     <S.OrderConfirmationFooter>
                         <S.OrderConfirmationFooterRow>
                             <span>Subtotal</span>
-                            <span>R$ 150.00</span>
+                            <span>R$ 0.00</span>
                         </S.OrderConfirmationFooterRow>
                     </S.OrderConfirmationFooter>
                 } />
