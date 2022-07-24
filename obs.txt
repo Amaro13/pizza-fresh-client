@@ -162,3 +162,29 @@ Components OrderItemList, OrderItemOverlay, CheckoutSection, OrderConfirmat
     OrderItem:
     // This is a component created following the same model as the one before
     // This component is imported in the OrderDetails
+
+    OrderItemOverlay:
+    // This is a component created following the same model as the one before
+
+    CheckoutSection:
+    // This is a component created following the same model as the one before
+
+    OrderConfirmat:
+    // This is a component created following the same model as the one before
+
+Settings, NavColumn, NavColumnItem, ManageProducts and EditProduct
+    Settings:
+    // This is a page so it has it's index and style in the Settigns folder created in the pages folder
+    // This will also be used as a hub of components just like the Home page
+
+    NavColumnItem:
+    // This has a structure of Item, Title and SubTitle, this is to be imported into the Settings page
+
+    ManageProducts:
+    // So here is where you start adding products into your product list
+
+    EditProduct:
+    // So this is the component that defines the change of style, it follows the same idea as the onde before, but it can edit products.
+
+    ManageUsers:
+    // Very similar to the ManageProducts but for settings, in here you can add users
